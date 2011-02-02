@@ -1,7 +1,7 @@
 require 'erb'
 require 'haml'
 
-module ErbTags
+module ViewsTags
   
   include Radiant::Taggable
 
@@ -12,9 +12,9 @@ module ErbTags
     
     *Usage*:
     
-    <pre><code><r:erb name="foo" /></code></pre>
+    <pre><code><r:render name="foo" /></code></pre>
   }
-  tag "erb" do |tag|
+  tag "render" do |tag|
     raise 'L\'attribut "name" doit être défini.' unless tag.attr['name']
     
     pathname = pathname_rhtml = pathname(tag, 'rhtml')

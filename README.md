@@ -1,26 +1,26 @@
-radiant-erb-extension
+radiant-views-extension
 =====================
 
 Installation
 ------------
 
-git clone git://github.com/lunaweb/radiant-erb-extension.git
+git clone git://github.com/lunaweb/radiant-views-extension.git
 
 Utilisation
 -----------
 
 ### Base
 
-Dans n'importe quel page/layout/snippet l'utilisation du tag `<r:erb>` permet de faire le rendu d'un template présent dans "RAILS_ROOT/app/views/".
+Dans n'importe quel page/layout/snippet l'utilisation du tag `<r:render>` permet de faire le rendu d'un template présent dans "RAILS_ROOT/app/views/".
 
-`<r:erb name="foo" />` fera donc un rendu du template présent à l'adresse `RAILS_ROOT/app/views/foo.phtml`
+`<r:render name="foo" />` fera donc un rendu du template présent à l'adresse `RAILS_ROOT/app/views/foo.phtml`
 
 Dans le template il est possible d' :
 
 * utiliser Ruby
 * utiliser des variables
 * exécuter d'autres tags Radiant (`<r:snippet>`, `<r:content>`, ... et tous les autres)
-* exécuter d'autres `<r:erb>`
+* exécuter d'autres `<r:render>`
 
 ### Tag rattaché au template
 
@@ -33,7 +33,7 @@ Cela permet d'éviter tout effet indésirable (exemple : l'exécution du tag `<r
 
 Ainsi le rendu d'un template "ns:foo" correspondra au template "RAILS_ROOT/app/views/ns/foo.rhtml" et au tag "ns:foo".
 
-	<r:erb name="ns:foo" />
+	<r:render name="ns:foo" />
 
 L'utilisation du tag n'est pas obligatoire : il est possible de ne pas le déclarer.
 
